@@ -20,7 +20,7 @@ export const Navbar = () => {
                 </div>
                 <ul className="menu-list">
                     {
-                        menuList.map((menu)=>(<li>{menu}</li>))
+                        menuList.map((menu, idx)=>(<li key={idx}>{menu}</li>))
                     }
                 </ul>
                 <div className="input-area">
