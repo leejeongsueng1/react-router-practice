@@ -1,6 +1,7 @@
 .login-button{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     margin: 20px;
 }
 
@@ -43,4 +44,89 @@
 .input-box{
     border: none;
     outline: none;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: clip;
+    transition: all 0.7s linear;
+}
+
+.ListCont:hover .product:hover {
+    transform: scale(1.05);
+}
+
+.ListCont:hover .product:not(:hover) {
+    transform: scale(0.95);
+}
+
+.product img {
+    width: 100%;
+}
+
+.login-form {
+    padding: 50px;
+    background-color: whitesmoke;
+    background-clip: padding-box;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.id-div{
+    margin: 10px 10px;
+    align-items: center;
+    justify-content: right;
+    flex: 12;
+}
+.pwd-div{
+    margin: 10px 10px;
+    align-items: center;
+    justify-content: right;
+    flex: 12;
+}
+.submit-div{
+    margin: 10px 20px 10px 20%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex: 12;
+
+}
+.id-label{
+    width:80px;
+    justify-content: left;
+}
+.pwd-label{
+    width:80px;
+}
+.input-id {
+    background-color: whitesmoke;
+    outline: none;
+    border: none;
+    letter-spacing: 1px;
+    border-bottom: 1px solid gray;
+}
+
+.input-pwd {
+    background-color: whitesmoke;
+    outline: none;
+    border: none;
+    letter-spacing: 1px;
+    border-bottom: 1px solid gray;
+}
+.input-submit {
+    margin: 5px 5px 5px 5px;
+    border:none;
+    background: linear-gradient(90deg,orange,red);
+    border-radius: 15vw;
+    color: whitesmoke;
+    height: 5vh;
+    width: 5vw;
+
 }

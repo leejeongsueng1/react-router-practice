@@ -4,6 +4,8 @@ import {ProductAll} from "./pages/ProductAll";
 import {Login} from "./pages/Login";
 import {ProductDetail} from "./pages/ProductDetail";
 import {Navbar} from "./components/Navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {useState} from "react";
 
 /*TODO:
    1. 전체 상품 페이지, 로그인 페이지, 상품 상세 페이지
@@ -18,16 +20,19 @@ import {Navbar} from "./components/Navbar";
 
 */
 function App() {
-  return (
+
+    const [isLogined, setIsLogined] = useState(false);
+
+    return (
     <div>
-        <Navbar/>
+        <Navbar isLogined={isLogined}/>
         <Routes>
             <Route path="/" element={<ProductAll/>}/>
             <Route path="/login" element={<Login/>} />
             <Route path="/product/:id" element={<ProductDetail/>} />
         </Routes>
     </div>
-  );
+    );
 }
 
 export default App;

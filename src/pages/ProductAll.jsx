@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {ProductCard} from "../components/ProductCard";
+import {Col, Container, Row} from "react-bootstrap";
 
 export const ProductAll = () => {
 
@@ -17,8 +18,13 @@ export const ProductAll = () => {
     }, []);
 
     return (
-        <div>
-            <ProductCard/>
-        </div>
+        <Container  className="ListCont">
+            <Row>
+                {
+                    productList.map((item, idx)=>(<Col lg={3}><ProductCard fluid={true}  item={item} />  </Col>))
+                }
+            </Row>
+
+        </Container>
     )
 }
