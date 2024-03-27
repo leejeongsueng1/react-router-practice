@@ -2,10 +2,12 @@ import './App.css';
 import {Routes, Route} from "react-router-dom";
 import {ProductAll} from "./pages/ProductAll";
 import {Login} from "./pages/Login";
-import {ProductDetail} from "./pages/ProductDetail";
 import {Navbar} from "./components/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from "react";
+import {PrivateRoute} from "./routes/PrivateRoute";
+import { Container } from "react-bootstrap";
+import {isMobile} from "react-device-detect";
 
 /*TODO:
    1. 전체 상품 페이지, 로그인 페이지, 상품 상세 페이지
@@ -21,17 +23,17 @@ import {useState} from "react";
 */
 function App() {
 
-    const [isLogined, setIsLogined] = useState(false);
-
+    const [auth, setAuth] = useState(false);
     return (
-    <div>
-        <Navbar isLogined={isLogined}/>
-        <Routes>
-            <Route path="/" element={<ProductAll/>}/>
-            <Route path="/login" element={<Login/>} />
-            <Route path="/product/:id" element={<ProductDetail/>} />
-        </Routes>
-    </div>
+        <Container>
+            <Navbar auth={auth} setAuth={setAuth} isMobile={isMobile}/>
+            <Routes>
+                <Route path="/" element={<ProductAll/>}/>
+                <Route path="/login" element={<Login setAuth={setAuth} />}  />
+                <Route path="/product/:id" element={<PrivateRoute auth={auth}/>} />
+            </Routes>
+
+        </Container>
     );
 }
 

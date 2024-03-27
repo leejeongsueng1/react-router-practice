@@ -1,13 +1,41 @@
+.utility{
+    display: flex;
+    flex-direction: row;
+}
+
 .login-button{
+    margin: 20px;
+    margin-left: auto;
+    width:fit-content;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin: 20px;
+}
+
+.MenuOpen{
+    width: 10%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.InMenuToggle{
+    margin-left: 60%;
+    width:20%;
+    margin-bottom: 50%;
 }
 
 .main-logo{
     display: flex;
     justify-content: center;
+
+}
+
+.main-logo.mobile{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 
 }
 
@@ -19,6 +47,42 @@
     justify-content: space-around;
     align-items: center;
     flex:1;
+}
+
+.menu-area.mobile{
+    height:100%;
+    z-index: 99;
+    background-color: darkgray;
+    overflow-x: hidden;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+}
+
+.show-menu{
+    height:100%;
+    width: 40%;
+    position:fixed;
+    top: 0;
+    left: 0%;
+    transition: 1s;
+}
+
+.hide-menu{
+    height:100%;
+    width: 40%;
+    position:fixed;
+    top: 0;
+    left: -40%;
+    transition: 1s;
+}
+.menu-list.mobile {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    flex:12;
+    justify-content: right;
+    align-items: stretch;
 }
 
 .menu-list {
@@ -35,13 +99,15 @@
 
 .input-area{
     border-bottom: 1px solid black;
-    width: fit-content;
+    flex-direction: row;
     flex:1;
     align-items: end;
-    margin-right: 20px;
 }
-
+.search-icon{
+    width: 10%;
+}
 .input-box{
+    width: 90%;
     border: none;
     outline: none;
 }
@@ -129,4 +195,61 @@
     height: 5vh;
     width: 5vw;
 
+}
+
+.ProductDetail{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 10px;
+    justify-content: center;
+
+}
+
+.DetailImg {
+    width: 90%;
+    padding: 20px;
+}
+
+.ProductInfo {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 5px;
+    align-items: start;
+}
+
+.ProductTitle{
+    margin-top: 9px;
+    font-size: 2.5vh;
+}
+
+.ProductPrice{
+    margin-top: 9px;
+    font-size: 2.2vh;
+}
+
+.ProductChoice{
+    margin-top: 9px;
+    font-size: 1.3vh;
+}
+.SizeSelect{
+    margin-top: 9px;
+    height: 3.5vh;
+    text-align: center;
+}
+
+.addCart {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 9px;
+    text-align: center;
+    font-size: 2vh;
+    color: whitesmoke;
+    font-weight: bolder;
 }
