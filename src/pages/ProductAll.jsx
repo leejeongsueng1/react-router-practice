@@ -7,7 +7,7 @@ export const ProductAll = () => {
     const [productList, setProductList] = useState([]);
 
     const getProducts = async ()=>{
-        let url = 'https://my-json-server.typicode.com/leejeongseung1/react-router-practice';
+        let url = 'https://my-json-server.typicode.com/leejeongsueng1/react-router-practice/products';
         let response = await fetch(url);
         let data = await response.json();
         setProductList(data);
