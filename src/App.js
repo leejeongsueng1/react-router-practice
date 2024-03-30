@@ -4,7 +4,7 @@ import {ProductAll} from "./pages/ProductAll";
 import {Login} from "./pages/Login";
 import {Navbar} from "./components/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {PrivateRoute} from "./routes/PrivateRoute";
 import { Container } from "react-bootstrap";
 import {isMobile} from "react-device-detect";

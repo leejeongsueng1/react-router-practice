@@ -18,31 +18,9 @@ export const Navbar = ({auth, setAuth, isMobile}) => {
     return (
         <div>
             <div className="utility">
-                {isMobile ? <div className="MenuOpen">
+                <div className="MenuOpen">
                     <FontAwesomeIcon icon={faBars} onClick={()=>toggleMenu()}  />
-                </div>:""}
-                <div className="login-button" onClick={()=>{
-                    if (!auth ){navigate("/login");}else{setAuth(false); navigate("/");}
-                }}>
-                    <FontAwesomeIcon icon={faUser} />
-                    <div>{auth? "로그아웃" : "로그인"}</div>
                 </div>
-            </div>
-            <div className={`main-logo ${isMobile?"mobile":""}`}>
-                <img width={100} onClick={()=>{
-                    navigate("/");
-                }
-                } src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png" alt="no imgs"/>
-            </div>
-            <div className={`menu-area ${isMobile?"mobile":""} ${isMobile?menuToggle? "show-menu" : "hide-menu" :""}`}>
-                <div className='noneClass'>
-                </div>
-                <ul className={`menu-list ${isMobile?"mobile":""}`}>
-                        <>
-                            <>{isMobile? <FontAwesomeIcon class="InMenuToggle" icon={faTimes} onClick={()=>toggleMenu()}  /> : null}</>
-                            {menuList.map((menu, idx)=>(<li key={idx}>{menu}</li>))}
-                        </>
-                </ul>
                 <div className="input-area">
                     <FontAwesomeIcon className="search-icon" icon={faSearch}/>
                     <input className="input-box" type="text" onKeyPress={(event)=>{
@@ -53,6 +31,28 @@ export const Navbar = ({auth, setAuth, isMobile}) => {
                         }
                     }}  />
                 </div>
+                <div className="login-button" onClick={()=>{
+                    if (!auth ){navigate("/login");}else{setAuth(false); navigate("/");}
+                }}>
+                    <FontAwesomeIcon icon={faUser} />
+                    <div>{auth? "로그아웃" : "로그인"}</div>
+                </div>
+            </div>
+            <div className={`main-logo`}>
+                <img width={100} onClick={()=>{
+                    navigate("/");
+                }
+                } src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png" alt="no imgs"/>
+            </div>
+            <div className={`menu-area ${menuToggle?"show-menu":"hide-menu"} `}>
+                <div className='noneClass'>
+                </div>
+                <ul className="menu-list">
+                        <>
+                            <FontAwesomeIcon class="InMenuToggle" icon={faTimes} onClick={()=>toggleMenu()}  />
+                            {menuList.map((menu, idx)=>(<li key={idx}>{menu}</li>))}
+                        </>
+                </ul>
             </div>
         </div>
     )
