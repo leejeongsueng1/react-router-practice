@@ -149,7 +149,7 @@
     background: linear-gradient(90deg,orange,red);
     border-radius: 15vw;
     color: whitesmoke;
-    height: 5vh;
+    height: 50px;
     width: 70px;
 
 }
@@ -298,7 +298,7 @@
         background: linear-gradient(90deg,orange,red);
         border-radius: 15vw;
         color: whitesmoke;
-        height: 6vh;
+        height: 50px;
         width: 70px;
     }
 
