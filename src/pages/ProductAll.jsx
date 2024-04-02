@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {ProductCard} from "../components/ProductCard";
 import {Col, Container, Row} from "react-bootstrap";
 import {useSearchParams} from "react-router-dom";

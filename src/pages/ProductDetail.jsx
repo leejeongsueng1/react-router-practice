@@ -1,5 +1,5 @@
 import {Col, Container} from "react-bootstrap";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {productAction} from "../redux/actions/ProductAction";
@@ -16,13 +16,13 @@ export const ProductDetail = () => {
     useEffect(() => {
         getItemDetail();
 
-    }, [id] );
+    }, [] );
 
 
     return (
         <Container className="ProductDetail">
             <Col className="col-5">
-                <img className="DetailImg" src={product?.img}/>
+                <img className="DetailImg" src={product?.img} alt="no imgs here"/>
             </Col>
             <Col className="col-7 ProductInfo">
                 <div className="ProductTitle">{product?.title}</div>

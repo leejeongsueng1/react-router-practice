@@ -4,11 +4,9 @@ import {ProductAll} from "./pages/ProductAll";
 import {Login} from "./pages/Login";
 import {Navbar} from "./components/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useEffect, useState} from "react";
 import {PrivateRoute} from "./routes/PrivateRoute";
 import { Container } from "react-bootstrap";
 import {isMobile} from "react-device-detect";
-import {useSelector} from "react-redux";
 
 /*TODO:
    1. 전체 상품 페이지, 로그인 페이지, 상품 상세 페이지

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Button, Form} from "react-bootstrap";
 import {Container} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {authenticateAction} from "../redux/actions/AuthenticateAction";
 
 export const Login = () => {
@@ -13,8 +13,6 @@ export const Login = () => {
 
     const onSubmit = (event)=>{
         event.preventDefault();
-
-
         dispatch(authenticateAction.login(id,password))
         navigator('/');
     }
