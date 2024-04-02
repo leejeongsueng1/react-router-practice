@@ -8,6 +8,7 @@ import {useEffect, useState} from "react";
 import {PrivateRoute} from "./routes/PrivateRoute";
 import { Container } from "react-bootstrap";
 import {isMobile} from "react-device-detect";
+import {useSelector} from "react-redux";
 
 /*TODO:
    1. 전체 상품 페이지, 로그인 페이지, 상품 상세 페이지
@@ -23,13 +24,13 @@ import {isMobile} from "react-device-detect";
 */
 function App() {
 
-    const [auth, setAuth] = useState(false);
+    const auth = useSelector(state=>state.auth.authenticate);
     return (
         <Container>
-            <Navbar auth={auth} setAuth={setAuth} isMobile={isMobile}/>
+            <Navbar auth={auth} isMobile={isMobile}/>
             <Routes>
                 <Route path="/" element={<ProductAll/>}/>
-                <Route path="/login" element={<Login setAuth={setAuth} />}  />
+                <Route path="/login" element={<Login />}  />
                 <Route path="/product/:id" element={<PrivateRoute auth={auth}/>} />
             </Routes>
 

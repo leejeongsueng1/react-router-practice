@@ -3,7 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser} from "@fortawesome/free-regular-svg-icons";
 import {faSearch, faBars, faTimes} from "@fortawesome/free-solid-svg-icons";
 import {useNavigate} from "react-router-dom";
-export const Navbar = ({auth, setAuth, isMobile}) => {
+import {useDispatch, useSelector} from "react-redux";
+import {authenticateAction} from "../redux/actions/AuthenticateAction";
+export const Navbar = ({auth}) => {
 
     const menuList = ['여성','Devided', '남성', '신생아/유아', '아동','H&M Home', 'Sale','지속가능성'];
 
@@ -14,6 +16,13 @@ export const Navbar = ({auth, setAuth, isMobile}) => {
     const toggleMenu = () => {
         setMenuToggle(menuToggle => !menuToggle); // on,off 개념 boolean
     }
+
+    const dispatch = useDispatch();
+    const setAuth = () =>{
+         dispatch(authenticateAction.logout());
+    };
+
+
 
     return (
         <div>
@@ -32,7 +41,7 @@ export const Navbar = ({auth, setAuth, isMobile}) => {
                     }}  />
                 </div>
                 <div className="login-button" onClick={()=>{
-                    if (!auth ){navigate("/login");}else{setAuth(false); navigate("/");}
+                    if (!auth ){navigate("/login");}else{setAuth(); navigate("/");}
                 }}>
                     <FontAwesomeIcon icon={faUser} />
                     <div>{auth? "로그아웃" : "로그인"}</div>

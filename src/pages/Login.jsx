@@ -1,25 +1,40 @@
-import React from "react";
-import {Form} from "react-bootstrap";
+import React, {useState} from "react";
+import {Button, Form} from "react-bootstrap";
 import {Container} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {authenticateAction} from "../redux/actions/AuthenticateAction";
 
-export const Login = ({setAuth}) => {
-
-
+export const Login = () => {
+    const [id, setId] = useState('');
+    const [password, setPassword] = useState('');
     const navigator = useNavigate();
+    const dispatch = useDispatch();
 
     const onSubmit = (event)=>{
         event.preventDefault();
-        setAuth(true);
+
+
+        dispatch(authenticateAction.login(id,password))
         navigator('/');
     }
 
     return (
         <Container className="login-form">
-            <Form onSubmit={onSubmit}>
-                <div className="id-div"><label className="id-label">아이디 :</label><input className="input-id" aria-label="id-label" type="text" placeholder="ID"/></div>
-                <div className="pwd-div"><label className="pwd-label">비밀번호 :</label><input className="input-pwd" type="password" placeholder="Password"/></div>
-                <div className="submit-div"><input className="input-submit" value="로그인" type="submit"/></div>
+            <Form className="login-form" onSubmit={onSubmit}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control type="email" placeholder="Enter email" onChange={(event)=>{setId(event.target.value)}} />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Password" onChange={(event)=>{setPassword(event.target.value)}}/>
+                </Form.Group>
+                <div className="submit-div">
+                    <Button variant="danger" type="submit">
+                        Login
+                    </Button>
+                </div>
             </Form>
         </Container>
 
