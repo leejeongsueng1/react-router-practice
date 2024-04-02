@@ -49,7 +49,7 @@ export const Navbar = ({auth, setAuth, isMobile}) => {
                 </div>
                 <ul className="menu-list">
                         <>
-                            <FontAwesomeIcon class="InMenuToggle" icon={faTimes} onClick={()=>toggleMenu()}  />
+                            <FontAwesomeIcon className="InMenuToggle" icon={faTimes} onClick={()=>toggleMenu()}  />
                             {menuList.map((menu, idx)=>(<li key={idx}>{menu}</li>))}
                         </>
                 </ul>

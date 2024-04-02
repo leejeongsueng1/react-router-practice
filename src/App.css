@@ -150,7 +150,7 @@
     border-radius: 15vw;
     color: whitesmoke;
     height: 5vh;
-    width: 5vw;
+    width: 70px;
 
 }
 
@@ -217,7 +217,19 @@
     display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
+
+    .login-button{
+
+        margin-left: 20px;
+        width:fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2vh;
+    }
+
+
     .menu-area{
         height:100%;
         z-index: 99;
@@ -254,12 +266,7 @@
         align-items: stretch;
     }
 
-    .menu-area{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex:1;
-    }
+
 
     .MenuOpen{
         width: 10%;
@@ -276,6 +283,24 @@
         margin-bottom: 50%;
     }
 
+
+    .input-area{
+        border-bottom: 1px solid black;
+        width: 30% ;
+        flex-direction: row;
+        align-items: end;
+        margin-left: auto;
+    }
+
+    .input-submit {
+        margin: 5px 5px 5px 5px;
+        border:none;
+        background: linear-gradient(90deg,orange,red);
+        border-radius: 15vw;
+        color: whitesmoke;
+        height: 6vh;
+        width: 70px;
+    }
 
 }
 
