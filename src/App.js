@@ -24,14 +24,14 @@ import {useSelector} from "react-redux";
 */
 function App() {
 
-    const auth = useSelector(state=>state.auth.authenticate);
+
     return (
         <Container>
-            <Navbar auth={auth} isMobile={isMobile}/>
+            <Navbar isMobile={isMobile}/>
             <Routes>
                 <Route path="/" element={<ProductAll/>}/>
                 <Route path="/login" element={<Login />}  />
-                <Route path="/product/:id" element={<PrivateRoute auth={auth}/>} />
+                <Route path="/product/:id" element={<PrivateRoute />} />
             </Routes>
 
         </Container>

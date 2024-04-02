@@ -1,5 +1,6 @@
 let initialState = {
-    productList:[]
+    productList:[],
+    product:null
 }
 
 function productReducer(state = initialState,action) {
@@ -7,6 +8,9 @@ function productReducer(state = initialState,action) {
     switch (type){
         case "GET_PRODUCT_SUCCESS":
             return {...state, productList: payload.data};
+        case "GET_PRODUCT_DETAIL":
+            console.log(payload.data);
+            return {...state, product:payload.data};
         default:
             return {...state};
     }

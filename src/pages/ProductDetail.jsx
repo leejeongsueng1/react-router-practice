@@ -1,21 +1,22 @@
 import {Col, Container} from "react-bootstrap";
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {productAction} from "../redux/actions/ProductAction";
 
 export const ProductDetail = () => {
     let {id} = useParams();
-    const [product, setProduct] = useState(null);
+    const product = useSelector(state=>state.product.product);
+    const dispatch = useDispatch();
+
     const getItemDetail = async ()=>{
-        let url = `https://my-json-server.typicode.com/leejeongsueng1/react-router-practice/products/${id}`
-        let response = await fetch(url);
-        let data = await response.json();
-        setProduct(data);
+        dispatch(productAction.getProduct(id));
     }
 
     useEffect(() => {
         getItemDetail();
 
-    }, []);
+    }, [id] );
 
 
     return (
