@@ -3,7 +3,7 @@ import {Button, Form} from "react-bootstrap";
 import {Container} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {authenticateAction} from "../redux/actions/AuthenticateAction";
+import {authenticateActions} from "../redux/reducer/AuthenticateSlice";
 
 export const Login = () => {
     const [id, setId] = useState('');
@@ -13,7 +13,7 @@ export const Login = () => {
 
     const onSubmit = (event)=>{
         event.preventDefault();
-        dispatch(authenticateAction.login(id,password))
+        dispatch(authenticateActions.setLogin(id,password));
         navigator('/');
     }
 

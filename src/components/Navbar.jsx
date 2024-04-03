@@ -4,7 +4,8 @@ import {faUser} from "@fortawesome/free-regular-svg-icons";
 import {faSearch, faBars, faTimes} from "@fortawesome/free-solid-svg-icons";
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {authenticateAction} from "../redux/actions/AuthenticateAction";
+import {authenticateActions} from "../redux/reducer/AuthenticateSlice";
+
 export const Navbar = () => {
 
     const menuList = ['여성','Devided', '남성', '신생아/유아', '아동','H&M Home', 'Sale','지속가능성'];
@@ -19,7 +20,7 @@ export const Navbar = () => {
     const auth = useSelector(state=>state.auth.authenticate);
     const dispatch = useDispatch();
     const setAuth = () =>{
-         dispatch(authenticateAction.logout());
+         dispatch(authenticateActions.setLogout());
     };
 
 

@@ -3,7 +3,8 @@ import {ProductCard} from "../components/ProductCard";
 import {Col, Container, Row} from "react-bootstrap";
 import {useSearchParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {productAction} from "../redux/actions/ProductAction"
+import { fetchProducts } from "../redux/reducer/ProductSlice";
+// import {productAction} from "../redux/actions/ProductAction"
 
 export const ProductAll = () => {
 
@@ -12,10 +13,9 @@ export const ProductAll = () => {
 
     const dispatch = useDispatch();
 
-    const getProducts = async ()=>{
+    const getProducts = ()=>{
         let searchQuery = query.get("q") || "";
-        dispatch(productAction.getProducts(searchQuery))
-
+        dispatch( fetchProducts(searchQuery) );
     }
 
     useEffect(() => {
